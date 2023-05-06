@@ -8,7 +8,7 @@ const pool = new Pool({
     connectionString: process.env.NEXT_PUBLIC_DB_CONNECTION_STRING,
 });
 
-export const tasks = pgTable('todo', {
+const tasks = pgTable('todo', {
     id: serial('id').primaryKey(),
     taskName: text('full_name').notNull(),
     isDone: boolean('false').notNull(),
