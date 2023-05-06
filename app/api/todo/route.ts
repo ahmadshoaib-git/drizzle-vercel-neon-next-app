@@ -15,8 +15,8 @@ export const tasks = pgTable('todo', {
     createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
-export type Task = InferModel<typeof tasks>;
-export type NewTask = InferModel<typeof tasks, 'insert'>;
+type Task = InferModel<typeof tasks>;
+type NewTask = InferModel<typeof tasks, 'insert'>;
 
 const db = drizzle(pool);
 
